@@ -22,13 +22,13 @@
 <html lang="en">
 <head>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-149651524-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153794668-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  gtag('config', 'UA-149651524-1');
+  gtag('config', 'UA-149651524-1');
 </script>
 
 
@@ -45,18 +45,19 @@
 <link href="./css/font-awesome.css" rel="stylesheet">
 <link href="./css/nav-fix.css" media="all" type="text/css"
 	rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<!--  <style>
-.artwork {
-	margin-top: 30px;
-	margin-bottom: 30px;
-}
-</style>-->
+
 
 </head>
-<body>
-	<div id="fb-root"></div>
-	<script>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+</style>
+<body class="w3-light-grey">
+<div id="fb-root"></div>
+<script>
 
 (function(d, s, id){
     var js, fjs = d.getElementsByTagName(s)[0];
@@ -66,18 +67,12 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
-
-
-// This is called with the results from from FB.getLoginStatus().
 function statusChangeCallback(response) {
 console.log('statusChangeCallback');
 console.log(response);
-// The response object is returned with a status field that lets the
-// app know the current login status of the person.
-// Full docs on the response object can be found in the documentation
-// for FB.getLoginStatus().
+
 if (response.status === 'connected') {
-// Logged into your app and Facebook.
+
 var msg=document.getElementById('main_tweet_db');
 msg.style.display='';
 var login_div=document.getElementById('status');
@@ -85,7 +80,7 @@ login_div.style.display='none';
 testAPI();
 } 
 else if (response.status === 'not_authorized') {
-// The person is logged into Facebook, but not your app.
+
 var msg=document.getElementById('main_tweet_db');
 msg.style.display='none';
 var profile=document.getElementById('profile_link');
@@ -93,8 +88,7 @@ profile.style.display='none';
 document.cookie = "userid=" ;
 document.cookie = "username=";
 } else {
-// The person is not logged into Facebook, so we're not sure if
-// they are logged into this app or not.
+
 var msg=document.getElementById('main_tweet_db');
 msg.style.display='none';
 var profile=document.getElementById('profile_link');
@@ -119,9 +113,6 @@ var logout_event = function(response) {
 	document.cookie = "userid=" ;
 	document.cookie = "username=";
 }
-
-
-
 
   	function checkLoginState() {
     	FB.getLoginStatus(function(response) {
@@ -214,18 +205,6 @@ function testAPI() {
 </script>
 
 
-
-	<div id="status" class="well" style="width: 800px; margin: 0 auto;">
-		<h1 class="lead">
-			<strong>Welcome to Tweeter App by Srudhi Ravichandran </strong>
-		</h1>
-		<p>This app lets you post your tweets to facebook or share with
-			friends :)</p>
-		<p>You need to login with your facebook account to continue...</p>
-
-	</div>
-
-
 	<% Cookie[] cookies = request.getCookies();
 	String userid="", username="",picture="";
 	if (cookies != null) {
@@ -244,15 +223,12 @@ function testAPI() {
 	}
 	
 	%>
-
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container-fluid">
-				<a class="btn btn-navbar" data-toggle="collapse"
-					data-target=".nav-collapse"> <span class="icon-bar"></span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span>
-				</a> <a class="brand" href="#">Tweeter for FB</a>
-				<div class="btn-group pull-right" id="welcome">
+	<div class="w3-bar w3-white w3-large">
+  		<b><a href="#" class="w3-bar-item w3-button w3-teal w3-mobile">Tweetbook</a></b>
+  		<a href="#" class="w3-bar-item w3-button w3-mobile">Home</a>
+  		<a href="./friends.jsp" class="w3-bar-item w3-button w3-mobile">Friends Tweet</a>
+ 		 <a href="./friends_top_tweets.jsp" class="w3-bar-item w3-button w3-mobile">Top Tweets of Friends</a>
+ 		 <div class="btn-group pull-right" id="welcome">
 					Welcome, <strong><a id="fullname"> </a> </strong>
 					<fb:login-button autologoutlink="false"
 						scope="public_profile,email" onlogin="checkLoginState();">
@@ -265,96 +241,47 @@ function testAPI() {
 							href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
 							class="fb-xfbml-parse-ignore">Share</a>
 					</div>
-				</div>
-				<div class="nav-collapse">
-					<ul class="nav">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a id="profile_link" target="_blank" href="#">Profile</a>
-						</li>
-						<li><a id="friends_tweet" href="./friends.jsp">Friends
-								Tweet</a></li>
-						<li><a id="friends_top_tweets"
-							href="./friends_top_tweets.jsp">Top Tweets of Friends</a></li>
-					</ul>
-				</div>
-				<!--/.nav-collapse -->
-			</div>
 		</div>
 	</div>
-<!--  	<div class="container">
-		<div class="row">
-			<div class="span8 offset2">
-				<div class="row artwork hidden-phone"
-					style="font-size: 80px; text-align: center;">
-					<div class="span2">
-						<i class="icon-group"></i>
-					</div>
-					<div class="span2">
-						<i class="icon-comments-alt"></i>
-					</div>
-					<div class="span2">
-						<i class="icon-globe"></i>
-					</div>
-					<div class="span2">
-						<i class="icon-thumbs-up"></i>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>-->
+	<div class="w3-container w3-margin-top" id="rooms">
+    <h3>Welcome to Tweetbook!</h3>
+  </div>
+
 	<div id="main_tweet_db" class="container" style="display: none;">
 		<div class="row">
 			<div class="span4 offset4">
 				<p id="whatsup" class="lead"></p>
 				<div class="row">
-					<div class="span4 well">					
-						<form method="post" action="Tweet" name="post_tweet"
+					 <div class="w3-container" id="contact">
+						    <form method="post" action="Tweet" name="post_tweet"
 							id="post_tweet" accept-charset="UTF-8">
-							<input type="hidden" name="userid" id="userid" value="" /> <input
+								<input type="hidden" name="userid" id="userid" value="" /> <input
 								type="hidden" name="username" id="username" value="" /> <input
 								type="hidden" name="picture" id="picture" value="" />
-							<textarea class="span4" id="tweet_text" name="tweet_text"
+								<textarea class="span4" id="tweet_text" name="tweet_text"
 								rows="5" placeholder="Type in your new tweet"></textarea>
-							<input type="submit" name="post_btn" value="Post New Tweet"
+								<input type="submit" name="post_btn" value="Post New Tweet"
 								class="btn btn-info" onclick="post()" /> <input type="button"
 								name="share_btn" value="Share with friends"
 								class="btn btn-primary" onclick="share()" />
 						</form>
-					</div>
+						  </div>
 				</div>
 				<script>
 				var post = function() {
 					var text = document.getElementById('tweet_text').value;
-					console.log("value of text iddddd " + text);
+					console.log("value of text id " + text);
 					var url = "https://www.facebook.com/dialog/share?app_id=2648637625218654&href=https://project1-test-260621.appspot.com/"
 			        url = url + "&quote=" + text;
 					window.open(url);
 				}
 				</script>
 
-			<!--  	<div class="row">
-					<div class="span4 well">
-						<div class="row">
-							<div id="profile_pic" class="span1">
-								<a href="#" class="thumbnail"><img src="./img/user.jpg"
-									alt=""></a>
-							</div>
-							<div class="span3">
-								<h3>
-									<a id="fullname_head"> </a>
-								</h3>
-								<span id="num_tweets" class=" badge badge-warning">0
-									tweets</span> <span class=" badge badge-info">0 followers</span>
-							</div>
-						</div>
-					</div>
-				</div>-->
-
 				<div class="container">
 					<div class="row">
 						<div class="span4 well" style="overflow-y: scroll; height: 101%;">
 							<p class="lead">Previously Tweeted:</p>
-							<hr />
+							<hr/>
 
 							<%
    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();

@@ -16,13 +16,13 @@
   <head>
   
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-149651524-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153794668-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  gtag('config', 'UA-149651524-1');
+  gtag('config', 'UA-149651524-1');
 </script>
   
     <meta charset="utf-8">
@@ -31,13 +31,13 @@
     
  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 <!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
 
          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     
@@ -46,6 +46,9 @@
     <link href="./css/bootstrap-responsive.min.css" media="all" type="text/css" rel="stylesheet">
     <link href="./css/font-awesome.css" rel="stylesheet" >
     <link href="./css/nav-fix.css" media="all" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <style>
       .artwork {
@@ -55,32 +58,31 @@
     </style>
 
   </head>
-  <body>
-  
-  
-      <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">Tweeter</a>
-          <div class="btn-group pull-right" id="welcome">
-           Welcome, <strong><a id="fullname"> </a> </strong>                     
-           </div>
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li class="active"><a href="home.jsp">Home</a></li>
-              <li><a id="friends_tweet" href="./friends.jsp">Friends Tweet</a> </li>
-              <li><a id="friends_top_tweets" href="./friends_top_tweets.jsp">Top Tweets of Friends</a> </li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
-  
+  <style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+</style>
+<body class="w3-light-grey">
+
+     <div class="w3-bar w3-white w3-large">
+  		<b><a href="#" class="w3-bar-item w3-button w3-teal w3-mobile">Tweetbook</a></b>
+  		<a href="home.jsp" class="w3-bar-item w3-button w3-mobile">Home</a>
+  		<a href="./friends.jsp" class="w3-bar-item w3-button w3-mobile">Friends Tweet</a>
+ 		 <a href="./friends_top_tweets.jsp" class="w3-bar-item w3-button w3-mobile">Top Tweets of Friends</a>
+ 		 <div class="btn-group pull-right" id="welcome">
+					Welcome, <strong><a id="fullname"> </a> </strong>
+					<fb:login-button autologoutlink="false"
+						scope="public_profile,email" onlogin="checkLoginState();">
+					</fb:login-button>
+
+					<div class="fb-share-button"
+						data-href="https://developers.facebook.com/docs/plugins/"
+						data-layout="button_count" data-size="small">
+						<a target="_blank"
+							href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+							class="fb-xfbml-parse-ignore">Share</a>
+					</div>
+		</div>
+	</div>
   
   
   <div class="jumbotron">
@@ -111,16 +113,11 @@
 			 tweet.setProperty("count", newcount);
 			 username = (String) tweet.getProperty("username");
 			 date = (String) tweet.getProperty("date");
-			 ds.put(tweet);
-			
-			
+			 ds.put(tweet);	
     %>	
-        
-
-
         <ul class="list-group">
 
-            <li class="list-group-item list-group-item-success">
+            <li class="list-group-item list-group-item-info">
               <p>
                 <strong> Tweet: <%=tweet_text %> </strong>
               </p>

@@ -19,21 +19,20 @@
   <head>
   
   <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-149651524-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153794668-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  gtag('config', 'UA-149651524-1');
+  gtag('config', 'UA-149651524-1');
 </script>
   
   
     <meta charset="utf-8">
-    <title>FBTweet, from @mmalik6</title>
+    <title>Tweetbook</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="FB Tweet Project CS6320">
-    <meta name="author" content="Imran Malik">
+   
 
  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <!-- Latest compiled and minified CSS -->
@@ -52,6 +51,9 @@
     <link href="./css/bootstrap-responsive.min.css" media="all" type="text/css" rel="stylesheet">
     <link href="./css/font-awesome.css" rel="stylesheet" >
     <link href="./css/nav-fix.css" media="all" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <style>
       .artwork {
@@ -62,25 +64,19 @@
 
   </head>
 
-<body>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", Arial, Helvetica, sans-serif}
+</style>
+<body class="w3-light-grey">
 
-     <div class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <div class="nav-collapse">
-            <ul class="nav">
-              <li class="active"><a href="home.jsp">Home</a></li>
-              <li><a id="profile_link" target="_blank" href="#">Profile</a> </li>
-              <li><a id="friends_tweet" href="./friends.jsp">Friends Tweet</a> </li>
-              <li><a id="friends_top_tweets" href="./friends_top_tweets.jsp">Top Tweets of Friends</a> </li>
-            </ul>
-          </div>
-          </div>
-          </div>
-          </div>
+     <div class="w3-bar w3-white w3-large">
+  		<b><a href="#" class="w3-bar-item w3-button w3-teal w3-mobile">Tweetbook</a></b>
+  		<a href="home.jsp" class="w3-bar-item w3-button w3-mobile">Home</a>
+  		<a href="./friends.jsp" class="w3-bar-item w3-button w3-mobile">Friends Tweet</a>
+ 		 <a href="./friends_top_tweets.jsp" class="w3-bar-item w3-button w3-mobile">Top Tweets of Friends</a>
+	</div>
   <div class="jumbotron">
-  <h1> Friends Tweet Page</h1><br>
-  <h3> View Friends tweets here</h3>
+  <h4> Friends Tweet Page</h4><br>
   </div>
 
 <% Cookie[] cookies = request.getCookies();
@@ -114,7 +110,7 @@
 <div class="alert alert-danger">
   <button type="button" class="close" data-dismiss="alert">&times;</button>
   <h4>Warning!</h4>
-  No tweets from friends... Best check if any of your friends is using this app...
+  Please verify if your friends use this app.
 </div>
 <% 
 } 
@@ -131,7 +127,7 @@
 	     <div class="container">
         <ul class="list-group">
 
-            <li class="list-group-item list-group-item-success">
+            <li class="list-group-item list-group-item-info">
               <p>
                 <a class="active" target="_blank" href=<%=href%> ><%=tweet_text%></a>
               </p>
