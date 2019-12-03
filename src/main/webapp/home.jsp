@@ -230,7 +230,7 @@ function testAPI() {
 	
 	%>
 	<div class="w3-bar w3-white w3-large">
-  		<b><a href="#" class="w3-bar-item w3-button w3-teal w3-mobile">Tweetbook</a></b>
+  		<b><a href="#" class="w3-bar-item w3-button w3-red w3-mobile">Tweetbook</a></b>
   		<a href="#" class="w3-bar-item w3-button w3-mobile">Home</a>
   		<a href="./friends.jsp" class="w3-bar-item w3-button w3-mobile">Friends Tweet</a>
  		 <a href="./friends_top_tweets.jsp" class="w3-bar-item w3-button w3-mobile">Top Tweets of Friends</a>
