@@ -144,7 +144,13 @@ FB.Event.subscribe('auth.statusChange', function(response) {
 	  };	  
 
    
-   
+	  var post = function() {
+			var text = document.getElementById('tweet_text').value;
+			console.log("value of text id " + text);
+			var url = "https://www.facebook.com/dialog/share?app_id=2648637625218654&href=https://project1-test-260621.appspot.com/"
+	        url = url + "&quote=" + text;
+			window.open(url);
+		}
 
 // Here we run a very simple test of the Graph API after login is
 // successful. See statusChangeCallback() for when this call is made.
@@ -267,16 +273,7 @@ function testAPI() {
 						</form>
 						  </div>
 				</div>
-				<script>
-				var post = function() {
-					var text = document.getElementById('tweet_text').value;
-					console.log("value of text id " + text);
-					var url = "https://www.facebook.com/dialog/share?app_id=2648637625218654&href=https://project1-test-260621.appspot.com/"
-			        url = url + "&quote=" + text;
-					window.open(url);
-				}
-				</script>
-
+				
 				<div class="container">
 					<div class="row">
 						<div class="span4 well" style="overflow-y: scroll; height: 101%;">
