@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <servlet>
+    <servlet-name>tweet</servlet-name>
+    <servlet-class>fbapp.TweetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>tweet</servlet-name>
+    <url-pattern>/Tweet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>delete</servlet-name>
+    <servlet-class>fbapp.DeleteTweet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>delete</servlet-name>
+    <url-pattern>/Delete</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>home.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>BaseServlet</display-name>
+    <servlet-name>BaseServlet</servlet-name>
+    <servlet-class>fbapp.BaseServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BaseServlet</servlet-name>
+    <url-pattern>/BaseServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteTweet</display-name>
+    <servlet-name>DeleteTweet</servlet-name>
+    <servlet-class>fbapp.DeleteTweet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteTweet</servlet-name>
+    <url-pattern>/DeleteTweet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TweetServlet</display-name>
+    <servlet-name>TweetServlet</servlet-name>
+    <servlet-class>fbapp.TweetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TweetServlet</servlet-name>
+    <url-pattern>/TweetServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Util</display-name>
+    <servlet-name>Util</servlet-name>
+    <servlet-class>fbapp.Util</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Util</servlet-name>
+    <url-pattern>/Util</url-pattern>
+  </servlet-mapping>
+</web-app>
